@@ -9,6 +9,7 @@ const Form = ({ setTasks }) => {
 
   const addTask = (e) => {
     e.preventDefault();
+    if (inpValue === "") return;
     setTasks((prev) => [
       ...prev,
       { id: new Date().getTime(), title: inpValue },

@@ -6,7 +6,10 @@ import TasksList from "./components/TasksList/TasksList";
 import "./app.css";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    { id: 1, title: "Hello" },
+    { id: 2, title: "By" },
+  ]);
 
   return (
     <div className="app">
