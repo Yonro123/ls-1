@@ -1,0 +1,42 @@
+.TasksList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #834bf6;
+  border-radius: 5px;
+}
+.TaskBtn {
+  display: flex;
+  gap: 10px;
+}
+.TaskBtn button {
+  background-color: transparent;
+}
+.TaskBtn svg {
+  fill: white;
+}
+.editTask {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+.editTask input {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #834bf6;
+  outline: none;
+}
+.editTask button {
+  height: 100%;
+  padding: 10px;
+  color: white;
+  background-color: #834bf6;
+}
