@@ -17,17 +17,17 @@ const ListItem = ({ tasks, setTasks, task, setIsVisible }) => {
   };
 
   const deleteTask = () => {
-    let Tasks = [...tasks];
-    Tasks = Tasks.filter((elem) => task.id !== elem.id);
-    setTasks(Tasks);
+    let newTasks = [...tasks];
+    newTasks = newTasks.filter((elem) => task.id !== elem.id);
+    setTasks(newTasks);
   };
 
   return (
     <div className="list">
       <h3>{task.title}</h3>
       <div className="TaskBtn">
-        <Button value={<FiEdit />} Click={editTask} />
-        <Button value={<AiFillDelete />} Click={deleteTask} />
+        <Button value={<FiEdit />} onClick={editTask} />
+        <Button value={<AiFillDelete />} onClick={deleteTask} />
       </div>
     </div>
   );

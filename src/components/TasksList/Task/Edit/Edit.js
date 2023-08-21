@@ -5,13 +5,13 @@ import Input from "../../../Input/Input";
 import "./Edit.css";
 
 const Edit = ({ setIsVisible, tasks, setTasks, task }) => {
-  const [inpValue, setInpValue] = useState(task.title);
+  const [inputValue, setInputValue] = useState(task.title);
 
   const updateTask = () => {
     const newTasks = [...tasks];
     newTasks.filter((elem, i, arr) => {
       if (task.id === elem.id) {
-        arr[i] = { ...elem, title: inpValue };
+        arr[i] = { ...elem, title: inputValue };
         setTasks(arr);
       }
     });
@@ -20,8 +20,8 @@ const Edit = ({ setIsVisible, tasks, setTasks, task }) => {
 
   return (
     <div className="editTask">
-      <Input value={inpValue} setInpValue={setInpValue} />
-      <Button value="Update Task" Click={updateTask} />
+      <Input value={inputValue} setInputValue={setInputValue} />
+      <Button value="Update Task" onClick={updateTask} />
     </div>
   );
 };
