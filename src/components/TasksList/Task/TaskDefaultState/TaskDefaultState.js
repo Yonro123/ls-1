@@ -2,18 +2,11 @@ import Button from "../../../Button/Button";
 import { FiEdit } from "react-icons/fi";
 import { AiFillDelete } from "react-icons/ai";
 
-import "./ListItem.css";
+import "./TaskDefaultState.css";
 
-const ListItem = ({ tasks, setTasks, task, setIsVisible }) => {
+const TaskDefault = ({ tasks, setTasks, task, setIsEditing }) => {
   const editTask = () => {
-    const newTasks = [...tasks];
-    newTasks.filter((elem, i, arr) => {
-      if (elem.id === task.id) {
-        arr[i] = { ...task };
-        setTasks(arr);
-      }
-    });
-    setIsVisible(true);
+    setIsEditing(true);
   };
 
   const deleteTask = () => {
@@ -33,4 +26,4 @@ const ListItem = ({ tasks, setTasks, task, setIsVisible }) => {
   );
 };
 
-export default ListItem;
+export default TaskDefault;

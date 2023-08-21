@@ -2,9 +2,9 @@ import { useState } from "react";
 import Button from "../../../Button/Button";
 import Input from "../../../Input/Input";
 
-import "./Edit.css";
+import "./TaskEditState.css";
 
-const Edit = ({ setIsVisible, tasks, setTasks, task }) => {
+const Edit = ({ setIsEditing, tasks, setTasks, task }) => {
   const [inputValue, setInputValue] = useState(task.title);
 
   const updateTask = () => {
@@ -15,7 +15,7 @@ const Edit = ({ setIsVisible, tasks, setTasks, task }) => {
         setTasks(arr);
       }
     });
-    setIsVisible(false);
+    setIsEditing(false);
   };
 
   return (

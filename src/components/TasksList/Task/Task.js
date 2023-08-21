@@ -1,26 +1,25 @@
 import { useState } from "react";
-import Edit from "./Edit/Edit";
-import ListItem from "./ListItem/ListItem";
+import TaskEditState from "./TaskEditState/TaskEditState";
+import TaskDefaultState from "./TaskDefaultState/TaskDefaultState";
 
 const Task = ({ task, tasks, setTasks }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <li>
-      {isVisible || (
-        <ListItem
+      {isEditing ? (
+        <TaskEditState
           task={task}
           tasks={tasks}
           setTasks={setTasks}
-          setIsVisible={setIsVisible}
+          setIsEditing={setIsEditing}
         />
-      )}
-      {isVisible && (
-        <Edit
+      ) : (
+        <TaskDefaultState
           task={task}
           tasks={tasks}
           setTasks={setTasks}
-          setIsVisible={setIsVisible}
+          setIsEditing={setIsEditing}
         />
       )}
     </li>
